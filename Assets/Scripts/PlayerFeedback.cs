@@ -27,4 +27,12 @@ public class PlayerFeedback : MonoBehaviour
         im.color = Color.white;
         flashOver = true;
     }
+    public IEnumerator FlashGreen(Image im)
+    {
+        flashOver = false;
+        im.color = Color.green;
+        yield return new WaitForSeconds(0.1f);
+        im.color = Color.white;
+        flashOver = true;
+    }
 }

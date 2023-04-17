@@ -223,7 +223,7 @@ MonoBehaviour:
   HorsemanHeavy: cast HEAVENLY PURGE
   HorsemanNormal: did a RUSHING ATTACK
   HorsemanWeak: POKED the player
-  HorsemanMiss: Missed!
+  HorsemanMiss: ' Missed!'
   feedback: {fileID: 1666646420}
 --- !u!1 &136346703
 GameObject:
@@ -943,6 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionTxt: {fileID: 422319418}
+  flashOver: 1
 --- !u!4 &1666646421
 Transform:
   m_ObjectHideFlags: 0
