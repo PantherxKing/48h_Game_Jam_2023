@@ -225,10 +225,10 @@ MonoBehaviour:
   HorsemanWeak: '"Weak"'
   HorsemanMiss: '"Miss"'
   feedback: {fileID: 0}
-  Magnitude: 0
-  Roughness: 0
-  FadeIn: 0
-  FadeOut: 0
+  Magnitude: 4
+  Roughness: 4
+  FadeIn: 0.1
+  FadeOut: 1
 --- !u!1 &136346703
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1767798265}
   m_Layer: 0
-  m_Name: Cmera Holder
+  m_Name: Camera Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

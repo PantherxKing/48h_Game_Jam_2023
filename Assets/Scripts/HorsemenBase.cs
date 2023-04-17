@@ -7,23 +7,25 @@ public class HorsemenBase : Player
 {
     // Attack chooser
     // Inherit from Player (Player is actually health script)
-
+    [Header("Controls")]
     public bool playerTurnOver = false;
     public bool playerDodge = false;
     private System.Random rd = new System.Random();
-    public String horsemenName;
+    [Header("GameObjects")]
     [SerializeField]
     Player Target;
     [SerializeField]
-    public String HorsemanHeavy;
-    [SerializeField]
-    public String HorsemanNormal;
-    [SerializeField]
-    public String HorsemanWeak;
-    [SerializeField]
-    public String HorsemanMiss;
-    [SerializeField]
     PlayerFeedback feedback;
+    [Header("Strings")]
+    public String horsemenName;
+    public String HorsemanHeavy;
+    public String HorsemanNormal;
+    public String HorsemanWeak;
+    public String HorsemanMiss;
+    [Header("Health")]
+    public int enemyHealth;
+    public int enemyMaxHealth;
+    public Slider enemyhealthSlider;
     [Header("Shake Shake")]
     public float Magnitude;
     public float Roughness;
@@ -34,6 +36,9 @@ public class HorsemenBase : Player
     {
         Target = Target.GetComponent<Player>();
         feedback = feedback.GetComponent<PlayerFeedback>();
+        enemyHealth = enemyMaxHealth;
+        enemyhealthSlider.maxValue = enemyMaxHealth;
+        enemyhealthSlider.value = enemyMaxHealth;
     }
     private int HitChance()
     {
@@ -114,6 +119,21 @@ public class HorsemenBase : Player
         }
         playerTurnOver = false;
         
+        //if(enemyHealth <= 0)
+        //{
+        //    die();
+        //}
     }
+
+    public void TakeDamage(int damage)
+    {
+        enemyHealth -= damage;
+        enemyhealthSlider.value = enemyHealth;
+    }
+
+    //public void die()
+    //{
+
+    //}
 
 }
