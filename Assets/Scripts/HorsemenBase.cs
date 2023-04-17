@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class HorsemenBase : MonoBehaviour
+public class HorsemenBase : Player
 {
     // Attack chooser
     // Inherit from Player (Player is actually health script)
@@ -9,6 +9,8 @@ public class HorsemenBase : MonoBehaviour
     public bool playerTurnOver = false;
     public bool playeerDodge = false;
     private System.Random rd = new System.Random();
+    [SerializeField]
+    Player Target;
     [SerializeField]
     public String HorsemanHeavy;
     [SerializeField]
@@ -20,7 +22,7 @@ public class HorsemenBase : MonoBehaviour
 
     private void Start()
     {
-        
+        Target = Target.GetComponent<Player>();
     }
     private int HitChance() 
     {
@@ -63,16 +65,17 @@ public class HorsemenBase : MonoBehaviour
         }
         else if (attack.Equals("HEAVY"))
         {
-            // DMG = 15 - 20% player health (nums decided on how big health bar will be)
+            Target.dmg(rd.Next(15,20)); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
         }
         else if (attack.Equals("NORMAL"))
         {
-            // DMG = 8 - 15% player health (nums decided on how big health bar will be)
+            Target.dmg(rd.Next(8, 15)); // DMG = 8 - 15% player health (nums decided on how big health bar will be)
         }
         else if (attack.Equals("WEAK")) 
         {
-            // DMG = 3 - 8% player health (nums decided on how big health bar will be)
+            Target.dmg(rd.Next(3, 8)); // DMG = 3 - 8% player health (nums decided on how big health bar will be)
         }
+        Debug.Log(attack);
     }
 
     private void Update()
@@ -81,6 +84,7 @@ public class HorsemenBase : MonoBehaviour
         {
             Attack();
         }
+        playerTurnOver = false;
     }
 
 }
