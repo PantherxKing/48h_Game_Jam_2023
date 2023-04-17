@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/SelectCharacter.unity
+    guid: 217f74a2a2051b34ca76de899efb9952
   - enabled: 1
-    path: Assets/Scenes/Zuka's Test.unity
-    guid: 9f8ab0d2184ed844b8d391883d0d39af
+    path: Assets/Scenes/KnoxTest.unity
+    guid: 654bc8215e1fc3e418bbee4337b3e12b
   m_configObjects: {}
