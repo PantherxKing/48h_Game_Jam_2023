@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HorsemenManager : MonoBehaviour
@@ -9,7 +10,9 @@ public class HorsemenManager : MonoBehaviour
 
     private void Awake()
     {
+        DestroyHorsemen();
         currentHorsemen = 0;
+        horsemen[currentHorsemen].SetActive(true);
     }
     private void Update()
     {
@@ -17,15 +20,33 @@ public class HorsemenManager : MonoBehaviour
         {
             // load win screen
         }
-        if (horsemen[currentHorsemen].GetComponent<HorsemenBase>().Health <= 0)
+        if (CheckHealth(currentHorsemen))
         {
-            Destroy(horsemen[currentHorsemen]);
-            if (currentHorsemen >= 4)
-            { 
-                //move to win scene
-            }
-            currentHorsemen += 1;
-            Instantiate(horsemen[currentHorsemen]);
+            
+        }
+    }
+    bool CheckHealth(int index) 
+    {
+        return horsemen[index].GetComponent<HorsemenBase>().Health <= 0;
+    }
+
+    void NextHorseman() 
+    {
+        DestroyHorsemen();
+        currentHorsemen += 1;
+        if (currentHorsemen > 3)
+        {
+            DestroyHorsemen();
+            //move to win scene
+        }
+        horsemen[currentHorsemen].SetActive(true);
+    }
+    void DestroyHorsemen() 
+    {
+        GameObject[] g = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i > g.Length;  i++)
+        {
+            g[i].SetActive(false);
         }
     }
 
