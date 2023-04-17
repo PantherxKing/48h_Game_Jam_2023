@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HorsemenBase : Player
 {
@@ -9,6 +10,7 @@ public class HorsemenBase : Player
     public bool playerTurnOver = false;
     public bool playerDodge = false;
     private System.Random rd = new System.Random();
+    public String horsemenName;
     [SerializeField]
     Player Target;
     [SerializeField]
@@ -19,10 +21,13 @@ public class HorsemenBase : Player
     public String HorsemanWeak;
     [SerializeField]
     public String HorsemanMiss;
+    [SerializeField]
+    PlayerFeedback feedback;
 
     private void Start()
     {
         Target = Target.GetComponent<Player>();
+        feedback = feedback.GetComponent<PlayerFeedback>();
     }
     private int HitChance()
     {
@@ -64,20 +69,30 @@ public class HorsemenBase : Player
     public void Attack()
     {
         String attack = AttackType();
+        int dmg = 0;
 
-        if (attack.Equals("HEAVY"))
+        if (attack.Equals("MISS")) 
         {
-            Target.dmg(rd.Next(15, 20)); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
+            feedback.WriteToScreen(horsemenName + HorsemanMiss);
+            return;
+        }
+        else if (attack.Equals("HEAVY"))
+        {
+            dmg = rd.Next(15, 20); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
+            feedback.WriteToScreen(horsemenName + " " + HorsemanHeavy + " for " + dmg.ToString() + " damage!");
         }
         else if (attack.Equals("NORMAL"))
         {
-            Target.dmg(rd.Next(8, 15)); // DMG = 8 - 15% player health (nums decided on how big health bar will be)
+            dmg = rd.Next(8, 15); // DMG = 8 - 15% player health (nums decided on how big health bar will be)
+            feedback.WriteToScreen(horsemenName + " " + HorsemanNormal + " for " + dmg.ToString() + " damage!");
         }
         else if (attack.Equals("WEAK"))
         {
-            Target.dmg(rd.Next(3, 8)); // DMG = 3 - 8% player health (nums decided on how big health bar will be)
+            dmg = rd.Next(3, 8); // DMG = 3 - 8% player health (nums decided on how big health bar will be)
+            feedback.WriteToScreen(horsemenName + " " + HorsemanWeak + " for " + dmg.ToString() + " damage!");
         }
-        Debug.Log(attack);
+        Target.dmg(dmg);
+        StartCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));     
     }
 
     private void Update()
@@ -85,6 +100,10 @@ public class HorsemenBase : Player
         if (playerTurnOver)
         {
             Attack();
+        }
+        if (feedback.flashOver) 
+        {
+            StopCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));
         }
         playerTurnOver = false;
         
