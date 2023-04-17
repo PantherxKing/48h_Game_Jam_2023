@@ -11,8 +11,10 @@ public class CardScript : MonoBehaviour
     public TextMeshProUGUI Description;
     public Image Card;
     public Image Icon;
+    public GameObject HorseMan;
     [Header("Scrptable Object")]
     public CardSO CS;
+    public HorsemenBase HB;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class CardScript : MonoBehaviour
         Description.text = CS.cardDescription;
         Card.sprite = CS.cardBorder;
         Icon.sprite = CS.cardIcon;
+
     }
 
     // Update is called once per frame
@@ -31,6 +34,6 @@ public class CardScript : MonoBehaviour
 
     public void Attack(CardSO cardso)
     {
-
+        HorseMan.GetComponent<HorsemenBase>().dmg(cardso.damage);
     }
 }

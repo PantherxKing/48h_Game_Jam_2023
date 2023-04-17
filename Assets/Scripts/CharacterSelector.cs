@@ -30,8 +30,8 @@ public class CharacterSelector : MonoBehaviour
         PlayerPrefs.SetInt("Selected Character", CharacterSciptableObject.IDNumber);
     }
    
-    public void nextScene(string SceneName)
+    public void nextScene()
     {
-        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

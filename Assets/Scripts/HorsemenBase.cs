@@ -1,3 +1,4 @@
+using EZCameraShake;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,23 +7,26 @@ public class HorsemenBase : Player
 {
     // Attack chooser
     // Inherit from Player (Player is actually health script)
-
+    [Header("Controls")]
     public bool playerTurnOver = false;
     public bool playerDodge = false;
     private System.Random rd = new System.Random();
-    public String horsemenName;
+    [Header("GameObjects")]
     [SerializeField]
     Player Target;
     [SerializeField]
-    public String HorsemanHeavy;
-    [SerializeField]
-    public String HorsemanNormal;
-    [SerializeField]
-    public String HorsemanWeak;
-    [SerializeField]
-    public String HorsemanMiss;
-    [SerializeField]
     PlayerFeedback feedback;
+    [Header("Strings")]
+    public String horsemenName;
+    public String HorsemanHeavy;
+    public String HorsemanNormal;
+    public String HorsemanWeak;
+    public String HorsemanMiss;
+    [Header("Shake Shake")]
+    public float Magnitude;
+    public float Roughness;
+    public float FadeIn;
+    public float FadeOut;
 
     private void Start()
     {
@@ -32,6 +36,7 @@ public class HorsemenBase : Player
     private int HitChance()
     {
         int _attackHitChance = rd.Next(0, 100);
+        CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
         if (playerDodge)
         {
             _attackHitChance -= rd.Next(1, 50);
@@ -107,6 +112,10 @@ public class HorsemenBase : Player
         }
         playerTurnOver = false;
         
+        //if(enemyHealth <= 0)
+        //{
+        //    die();
+        //}
     }
 
 }

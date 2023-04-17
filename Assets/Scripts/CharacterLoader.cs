@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterLoader : MonoBehaviour
 {
-    public GameObject Muskater1;
-    public GameObject Muskater2;
-    public GameObject Muskater3;
+    public Image Character;
+    public Sprite M1;
+    public Sprite M2;
+    public Sprite M3;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,19 +16,15 @@ public class CharacterLoader : MonoBehaviour
 
         if(selectedCharacter == 0)
         {
-            Muskater1.SetActive(true);
+            Character.sprite = M1;
         }
         if (selectedCharacter == 1)
         {
-            Muskater2.SetActive(true);
+            Character.sprite = M2;
         }
         if (selectedCharacter == 2)
         {
-            Muskater3.SetActive(true);
+            Character.sprite = M3;
         }
-        //GameObject Prefab1 = characterPrefabs[selectedCharacter];
-       // GameObject clone1 = Instantiate(Prefab1, Spawn.position, Quaternion.identity);
     }
-
-  
 }
