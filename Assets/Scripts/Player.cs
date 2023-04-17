@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public int Health = 50;
+    public int Health;
+    public int MaxHealth;
+    public Slider healthSlider;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Health = MaxHealth;
+        healthSlider.maxValue = MaxHealth;
+        healthSlider.value = MaxHealth;
     }
 
     // Update is called once per frame
@@ -21,14 +26,18 @@ public class Player : MonoBehaviour
     public void dmg(int dmg)
     {
         Health -= dmg;
+        healthSlider.value = Health;
     }
 
     public void heal(int Heal)
     {
         Health += Heal;
-        if (Health >= 50)
+
+        if (Health >= MaxHealth)
         {
-            Health = 50;
+            Health = MaxHealth;
         }
+
+        healthSlider.value = Health;
     }
 }
