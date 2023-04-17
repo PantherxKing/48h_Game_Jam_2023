@@ -31,11 +31,12 @@ public class CardScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HorseMan = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     public void Attack(CardSO cardso)
     {
+        
         HB = HorseMan.GetComponent<HorsemenBase>();
         HB.dmg(cardso.damage);
         HB.playerTurnOver = true;
