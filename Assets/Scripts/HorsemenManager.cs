@@ -11,22 +11,23 @@ public class HorsemenManager : MonoBehaviour
 
     private void Awake()
     {
-        Instantiate(horsemen, transform);
+        Instantiate(horsemen, transform.position, Quaternion.identity);
     }
-    private void LateUpdate()
+    private void Update()
     {
         if (CheckHealth())
         {
             horseDead = true;
         }
-        if((horseDead || horsemen.gameObject == null) && numKilled < 4)
+        if(horseDead && numKilled < 3)
         {
+            print("test");
             Instantiate(horsemen, transform);
             numKilled += 1;
             horseDead = false;
         }
-        
-        
+
+
     }
 
     private bool CheckHealth()

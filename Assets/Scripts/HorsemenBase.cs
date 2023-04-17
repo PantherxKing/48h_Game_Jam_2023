@@ -18,6 +18,8 @@ public class HorsemenBase : Player
     PlayerFeedback feedback;
     [SerializeField]
     Transform parent;
+    [SerializeField]
+    HorsemenManager HM;
     [Header("Strings")]
     public String horsemenName;
     public String HorsemanHeavy;
@@ -33,7 +35,8 @@ public class HorsemenBase : Player
     private void Start()
     {
         Target = GameObject.Find("Player").GetComponent<Player>();
-        feedback = GameObject.Find("Scripts").GetComponent<PlayerFeedback>();
+        feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
+        HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
         transform.SetParent(GameObject.Find("GameFight").transform);
     }
     private int HitChance()
@@ -117,6 +120,7 @@ public class HorsemenBase : Player
 
         if (Health <= 0)
         {
+            HM.horseDead = true;
             Destroy(gameObject);
         }
     }
