@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zuka's Test.unity
     guid: 9f8ab0d2184ed844b8d391883d0d39af
+  - enabled: 1
+    path: Assets/Matt Folder/Scenes/Main Menu.unity
+    guid: b7ea79b17d7d2d84c8b968a30039a929
+  - enabled: 1
+    path: Assets/Matt Folder/Scenes/Credits.unity
+    guid: 8f7eb763154b5a54bab8f37514008a57
   m_configObjects: {}
