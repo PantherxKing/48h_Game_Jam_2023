@@ -90,18 +90,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab2cf94a227cbe4b9c83e8cde9332d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
+  Health: 100
   MaxHealth: 100
   healthSlider: {fileID: 5314035200745028551}
   playerTurnOver: 0
   playerDodge: 0
-  horsemenName: Bob
   Target: {fileID: 0}
+  feedback: {fileID: 0}
+  horsemenName: Bob
   HorsemanHeavy: cast HEAVENLY PURGE
   HorsemanNormal: did a RUSHING ATTACK
   HorsemanWeak: POKED the player
   HorsemanMiss: ' Missed!'
-  feedback: {fileID: 0}
   Magnitude: 4
   Roughness: 4
   FadeIn: 0.1
