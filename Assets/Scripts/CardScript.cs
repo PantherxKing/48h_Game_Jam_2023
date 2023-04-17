@@ -34,7 +34,6 @@ public class CardScript : MonoBehaviour
 
     public void Attack(CardSO cardso)
     {
-        HB = HorseMan.GetComponent<HorsemenBase>();
-        HB.TakeDamage(cardso.damage);
+        HorseMan.GetComponent<HorsemenBase>().dmg(cardso.damage);
     }
 }
