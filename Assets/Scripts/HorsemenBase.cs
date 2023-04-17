@@ -22,10 +22,6 @@ public class HorsemenBase : Player
     public String HorsemanNormal;
     public String HorsemanWeak;
     public String HorsemanMiss;
-    [Header("Health")]
-    public int enemyHealth;
-    public int enemyMaxHealth;
-    public Slider enemyhealthSlider;
     [Header("Shake Shake")]
     public float Magnitude;
     public float Roughness;
@@ -36,9 +32,6 @@ public class HorsemenBase : Player
     {
         Target = Target.GetComponent<Player>();
         feedback = feedback.GetComponent<PlayerFeedback>();
-        enemyHealth = enemyMaxHealth;
-        enemyhealthSlider.maxValue = enemyMaxHealth;
-        enemyhealthSlider.value = enemyMaxHealth;
     }
     private int HitChance()
     {
@@ -124,16 +117,5 @@ public class HorsemenBase : Player
         //    die();
         //}
     }
-
-    public void TakeDamage(int damage)
-    {
-        enemyHealth -= damage;
-        enemyhealthSlider.value = enemyHealth;
-    }
-
-    //public void die()
-    //{
-
-    //}
 
 }
