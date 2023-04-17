@@ -36,7 +36,6 @@ public class CardScript : MonoBehaviour
 
     public void Attack(CardSO cardso)
     {
-        
         HB = HorseMan.GetComponent<HorsemenBase>();
         HB.dmg(cardso.damage);
         HB.playerTurnOver = true;
@@ -44,6 +43,7 @@ public class CardScript : MonoBehaviour
 
     public void Heal(CardSO cardso)
     {
+        HB = HorseMan.GetComponent<HorsemenBase>();
         P = player.GetComponent<Player>();
         P.heal(cardso.heal);
         HB.playerTurnOver = true;
