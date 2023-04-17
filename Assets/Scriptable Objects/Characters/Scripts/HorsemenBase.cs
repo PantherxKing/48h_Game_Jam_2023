@@ -16,6 +16,10 @@ public class HorsemenBase : Player
     Player Target;
     [SerializeField]
     PlayerFeedback feedback;
+    [SerializeField]
+    Transform parent;
+    [SerializeField]
+    HorsemenManager HM;
     [Header("Strings")]
     public String horsemenName;
     public String HorsemanHeavy;
@@ -30,8 +34,10 @@ public class HorsemenBase : Player
 
     private void Start()
     {
-        Target = Target.GetComponent<Player>();
-        feedback = feedback.GetComponent<PlayerFeedback>();
+        Target = GameObject.Find("Player").GetComponent<Player>();
+        feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
+        HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
+        transform.SetParent(GameObject.Find("GameFight").transform);
     }
     private int HitChance()
     {
@@ -111,11 +117,12 @@ public class HorsemenBase : Player
             StopCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));
         }
         playerTurnOver = false;
-        
-        //if(enemyHealth <= 0)
-        //{
-        //    die();
-        //}
+
+        if (Health <= 0)
+        {
+            HM.horseDead = true;
+            Destroy(gameObject);
+        }
     }
 
 }

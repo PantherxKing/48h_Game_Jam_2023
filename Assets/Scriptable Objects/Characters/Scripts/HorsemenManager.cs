@@ -1,33 +1,37 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HorsemenManager : MonoBehaviour
 {
     // Take a list of horsemen, spawn one by one on previous's death until none are left, then change to win screen
-    public GameObject[] horsemen;
-    int currentHorsemen;
+    public GameObject horsemen;
+    public bool horseDead = false;
+    int numKilled = 0;
 
     private void Awake()
     {
-        currentHorsemen = 0;
+        Instantiate(horsemen, transform.position, Quaternion.identity);
     }
     private void Update()
     {
-        if (horsemen == null)
+        if (CheckHealth())
         {
-            // load win screen
+            horseDead = true;
         }
-        if (horsemen[currentHorsemen].GetComponent<HorsemenBase>().Health <= 0)
+        if(horseDead && numKilled < 3)
         {
-            Destroy(horsemen[currentHorsemen]);
-            if (currentHorsemen >= 4)
-            { 
-                //move to win scene
-            }
-            currentHorsemen += 1;
-            Instantiate(horsemen[currentHorsemen]);
+            print("test");
+            Instantiate(horsemen, transform);
+            numKilled += 1;
+            horseDead = false;
         }
+
+
     }
 
-
+    private bool CheckHealth()
+    {
+        return horsemen.gameObject == null || horsemen.GetComponent<HorsemenBase>().Health <= 0;
+    }
 }
