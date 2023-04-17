@@ -1,3 +1,4 @@
+using EZCameraShake;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,11 @@ public class HorsemenBase : Player
     public String HorsemanMiss;
     [SerializeField]
     PlayerFeedback feedback;
+    [Header("Shake Shake")]
+    public float Magnitude;
+    public float Roughness;
+    public float FadeIn;
+    public float FadeOut;
 
     private void Start()
     {
@@ -32,6 +38,7 @@ public class HorsemenBase : Player
     private int HitChance()
     {
         int _attackHitChance = rd.Next(0, 100);
+        CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
         if (playerDodge)
         {
             _attackHitChance -= rd.Next(1, 50);
