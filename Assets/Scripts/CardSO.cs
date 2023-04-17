@@ -6,9 +6,12 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "Card_", menuName = "ScriptableObjects/Card")]
 public class CardSO : ScriptableObject
 {
+    [Header("Caard info")]
     public string cardName;
     public string cardDescription;
-    public int damage;
     public Sprite cardBorder;
     public Sprite cardIcon;
+    [Header("values")]
+    public int damage;
+    public int heal;
 }
