@@ -12,9 +12,11 @@ public class CardScript : MonoBehaviour
     public Image Card;
     public Image Icon;
     public GameObject HorseMan;
+    public GameObject player;
     [Header("Scrptable Object")]
     public CardSO CS;
-    public HorsemenBase HB;
+    HorsemenBase HB;
+    Player P;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,15 @@ public class CardScript : MonoBehaviour
 
     public void Attack(CardSO cardso)
     {
-        HorseMan.GetComponent<HorsemenBase>().dmg(cardso.damage);
+        HB = HorseMan.GetComponent<HorsemenBase>();
+        HB.dmg(cardso.damage);
+        HB.playerTurnOver = true;
+    }
+
+    public void Heal(CardSO cardso)
+    {
+        P = player.GetComponent<Player>();
+        P.heal(cardso.heal);
+        HB.playerTurnOver = true;
     }
 }
