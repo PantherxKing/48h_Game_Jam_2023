@@ -1307,8 +1307,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0944ef9dbda84974ab2a0eaa8f87d893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horsemen: {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
+  horsemen:
+  - {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
+  - {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
+  - {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
+  - {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
   horseDead: 0
+  numKilled: 0
 --- !u!1 &1734428683
 GameObject:
   m_ObjectHideFlags: 0

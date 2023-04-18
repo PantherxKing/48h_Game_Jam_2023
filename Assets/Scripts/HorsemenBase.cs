@@ -25,6 +25,8 @@ public class HorsemenBase : Player
     HorsemenManager HM;
     [Header("Strings")]
     public String horsemenName;
+    public String horsemenEnterMsg;
+    public String HorsemanDeathMsg;
     public String HorsemanHeavy;
     public String HorsemanNormal;
     public String HorsemanWeak;
@@ -44,11 +46,12 @@ public class HorsemenBase : Player
 
         if (HM.numKilled < 1)
         {
-            feedback.enemyFeedback = horsemenName + " has entered the fight!";
+            feedback.enemyFeedback = horsemenName + horsemenEnterMsg;
         }
         else
         {
-            feedback.enemyFeedback = HM.horsemen[HM.numKilled - 1].GetComponent<HorsemenBase>().horsemenName + " has DIED! " + horsemenName + " has entered the fight!";
+            HorsemenBase previousHorseman = HM.horsemen[HM.numKilled - 1].GetComponent<HorsemenBase>();
+            feedback.enemyFeedback = previousHorseman.horsemenName + " " + previousHorseman.HorsemanDeathMsg + " " + horsemenName + " " + horsemenEnterMsg;
         }
     }
     private int HitChance()

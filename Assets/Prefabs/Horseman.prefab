@@ -102,6 +102,8 @@ MonoBehaviour:
   parent: {fileID: 0}
   HM: {fileID: 0}
   horsemenName: Bob
+  horsemenEnterMsg: has entered the fight!
+  HorsemanDeathMsg: has DIED!
   HorsemanHeavy: cast HEAVENLY PURGE
   HorsemanNormal: did a RUSHING ATTACK
   HorsemanWeak: POKED the player
