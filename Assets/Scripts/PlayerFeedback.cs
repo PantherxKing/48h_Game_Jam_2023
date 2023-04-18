@@ -23,6 +23,7 @@ public class PlayerFeedback : MonoBehaviour
     }
     void Update()
     {
+
         hb = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
     }
 
@@ -31,8 +32,8 @@ public class PlayerFeedback : MonoBehaviour
         if (actionTxt.text.Equals(playerFeedback))
         {
             if (hb.Health > 0)
-            { 
-                hb.Attack(); 
+            {
+                hb.Attack();
             }
             WriteToScreen(enemyFeedback);
             enemyActiveText = true;
