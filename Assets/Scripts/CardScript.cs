@@ -38,9 +38,10 @@ public class CardScript : MonoBehaviour
 
     public void Attack(CardSO cardso)
     {
+        int dmghit = (Random.Range(cardso.damage, cardso.maxDamage));
         HB = HorseMan.GetComponent<HorsemenBase>();
-        HB.dmg(cardso.damage);
-        feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and attacked for " + cardso.damage.ToString() + " damage!";
+        HB.dmg(dmghit);
+        feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and attacked for " + dmghit.ToString() + " damage!";
         feedback.charChoices.SetActive(false);
         feedback.nextBut.SetActive(true);
         HB.playerTurnOver = true;

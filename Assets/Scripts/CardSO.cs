@@ -13,5 +13,6 @@ public class CardSO : ScriptableObject
     public Sprite cardIcon;
     [Header("values")]
     public int damage;
+    public int maxDamage;
     public int heal;
 }
