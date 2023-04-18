@@ -111,17 +111,20 @@ public class HorsemenBase : Player
         else if (attack.Equals("HEAVY"))
         {
             dmg = rd.Next(15, 20); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
+            //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.StartCoroutine(feedback.PlayParticles(heavyAtkParticles));
             feedback.enemyFeedback = horsemenName + " " + HorsemanHeavy + " for " + dmg.ToString() + " damage!";
         }
         else if (attack.Equals("NORMAL"))
         {
             dmg = rd.Next(8, 15); // DMG = 8 - 15% player health (nums decided on how big health bar will be)
+            //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.enemyFeedback = horsemenName + " " + HorsemanNormal + " for " + dmg.ToString() + " damage!";
         }
         else if (attack.Equals("WEAK"))
         {
             dmg = rd.Next(3, 8); // DMG = 3 - 8% player health (nums decided on how big health bar will be)
+            //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.enemyFeedback = horsemenName + " " + HorsemanWeak + " for " + dmg.ToString() + " damage!";
         }
         Target.dmg(dmg);
