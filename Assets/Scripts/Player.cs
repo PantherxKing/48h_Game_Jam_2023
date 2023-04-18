@@ -19,16 +19,12 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void dmg(int dmg)
     {
         Health -= dmg;
         healthSlider.value = Health;
-        Die();
+        //Die();
     }
 
     public void heal(int Heal)
@@ -43,13 +39,13 @@ public class Player : MonoBehaviour
         healthSlider.value = Health;
     }
 
-    public void Die()
-    {
-        string sceneName = "GameOver";
+    //public void Die()
+    //{
+    //    string sceneName = "GameOver";
 
-        if(Health <= 0)
-        {
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        }
-    }
+    //    if(Health <= 0)
+    //    {
+    //        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    //    }
+    //}
 }

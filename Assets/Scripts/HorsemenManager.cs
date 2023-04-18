@@ -19,12 +19,16 @@ public class HorsemenManager : MonoBehaviour
         {
             horseDead = true;
         }
-        if(horseDead && numKilled < 3)
+        if (horseDead && numKilled < 3)
         {
             print("test");
             Instantiate(horsemen, transform);
             numKilled += 1;
             horseDead = false;
+        }
+        else if ((horseDead && numKilled >= 3))
+        {
+            SceneManager.LoadScene("GameWin");
         }
 
 

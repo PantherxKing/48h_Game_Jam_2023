@@ -2,6 +2,7 @@ using EZCameraShake;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HorsemenBase : Player
 {
@@ -81,7 +82,7 @@ public class HorsemenBase : Player
         String attack = AttackType();
         int dmg = 0;
 
-        if (attack.Equals("MISS")) 
+        if (attack.Equals("MISS"))
         {
             feedback.enemyFeedback = horsemenName + HorsemanMiss;
             return;
@@ -102,7 +103,8 @@ public class HorsemenBase : Player
             feedback.enemyFeedback = horsemenName + " " + HorsemanWeak + " for " + dmg.ToString() + " damage!";
         }
         Target.dmg(dmg);
-        StartCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));     
+        StartCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));
+        
     }
 
     private void Update()
@@ -112,7 +114,7 @@ public class HorsemenBase : Player
             feedback.WriteToScreen(feedback.playerFeedback);
             Attack();
         }
-        if (feedback.flashOver) 
+        if (feedback.flashOver)
         {
             StopCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));
         }

@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Zuka's Test.unity
-    guid: 9f8ab0d2184ed844b8d391883d0d39af
-  - enabled: 1
     path: Assets/Matt Folder/Scenes/Main Menu.unity
     guid: b7ea79b17d7d2d84c8b968a30039a929
   - enabled: 1
+    path: Assets/Scenes/SelectCharacter.unity
+    guid: 217f74a2a2051b34ca76de899efb9952
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 878ba9d6307995241aeffe23cdf185af
+  - enabled: 1
     path: Assets/Matt Folder/Scenes/Credits.unity
     guid: 8f7eb763154b5a54bab8f37514008a57
+  - enabled: 1
+    path: Assets/Matt Folder/Scenes/GameWin.unity
+    guid: bf4871e44de45e540b83be3d9cd3ee25
+  - enabled: 1
+    path: Assets/Matt Folder/Scenes/GameOver.unity
+    guid: 1c9fec2d4d32e3241988f2ade3656159
   m_configObjects: {}
