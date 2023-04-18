@@ -45,7 +45,7 @@ public class HorsemenBase : Player
 
     private void Start()
     {
-        Target = GameObject.Find("Player").GetComponent<Player>();
+        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
         transform.SetParent(GameObject.Find("GameFight").transform);
