@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-
+using System;
 public class PlayerFeedback : MonoBehaviour
 {
 
@@ -23,8 +23,14 @@ public class PlayerFeedback : MonoBehaviour
     }
     void Update()
     {
-
-        hb = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
+        try
+        {
+            hb = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
+        }
+        catch (NullReferenceException e)
+        {
+            return;
+        }        
     }
 
     public void OnNextButtonBressed()

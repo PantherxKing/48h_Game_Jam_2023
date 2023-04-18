@@ -2,6 +2,7 @@ using EZCameraShake;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class HorsemenBase : Player
@@ -13,6 +14,7 @@ public class HorsemenBase : Player
     public bool playerDodge = false;
     public bool firstTurn = true;
     public bool isDead = false;
+    public float imageScale;
     private System.Random rd = new System.Random();
     [Header("GameObjects")]
     [SerializeField]
@@ -23,6 +25,8 @@ public class HorsemenBase : Player
     Transform parent;
     [SerializeField]
     HorsemenManager HM;
+    [SerializeField]
+    TMP_Text nameDisplay;
     [Header("Strings")]
     public String horsemenName;
     public String horsemenEnterMsg;
@@ -31,11 +35,11 @@ public class HorsemenBase : Player
     public String HorsemanNormal;
     public String HorsemanWeak;
     public String HorsemanMiss;
-    //[Header("Shake Shake")]
-    //public float Magnitude;
-    //public float Roughness;
-    //public float FadeIn;
-    //public float FadeOut;
+    [Header("Shake Shake")]
+    public float Magnitude;
+    public float Roughness;
+    public float FadeIn;
+    public float FadeOut;
 
     private void Start()
     {
@@ -43,7 +47,8 @@ public class HorsemenBase : Player
         feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
         transform.SetParent(GameObject.Find("GameFight").transform);
-
+        transform.localScale = new Vector3(imageScale, imageScale, imageScale);
+        nameDisplay.text = horsemenName;
         if (HM.numKilled < 1)
         {
             feedback.enemyFeedback = horsemenName + horsemenEnterMsg;
