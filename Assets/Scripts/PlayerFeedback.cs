@@ -84,4 +84,11 @@ public class PlayerFeedback : MonoBehaviour
         im.color = Color.white;
         flashOver = true;
     }
+    public IEnumerator PlayParticles(ParticleSystem part) 
+    {
+        part.gameObject.SetActive(true);
+        part.Play();
+        yield return new WaitForSeconds(2f);
+        part.gameObject.SetActive(false);
+    }
 }
