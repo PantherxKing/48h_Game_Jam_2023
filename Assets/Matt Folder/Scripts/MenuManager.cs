@@ -6,14 +6,6 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
 
-    void Start()
-    {
-
-    }
-    void Update()
-    {
-        
-    }
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
@@ -32,7 +24,5 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
-
-
 
 }
