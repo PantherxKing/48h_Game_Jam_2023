@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     {
         Health -= dmg;
         healthSlider.value = Health;
+        Die();
     }
 
     public void heal(int Heal)
@@ -39,5 +41,15 @@ public class Player : MonoBehaviour
         }
 
         healthSlider.value = Health;
+    }
+
+    public void Die()
+    {
+        string sceneName = "GameOver";
+
+        if(Health <= 0)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
     }
 }
