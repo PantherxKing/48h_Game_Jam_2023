@@ -48,7 +48,7 @@ public class HorsemenBase : Player
         Target = GameObject.Find("Player").GetComponent<Player>();
         feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
-        transform.SetParent(GameObject.Find("GameFight Canvas").transform);
+        transform.SetParent(GameObject.Find("GameFight").transform);
         transform.localScale = new Vector3(imageScale, imageScale, imageScale);
         nameDisplay.text = horsemenName;
         if (HM.numKilled < 1)
@@ -112,7 +112,9 @@ public class HorsemenBase : Player
         {
             dmg = rd.Next(15, 20); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
             feedback.StartCoroutine(feedback.PlayParticles(heavyAtkParticles));
-            feedback.enemyFeedback = horsemenName + " " + HorsemanHeavy + " for " + dmg.ToString() + " damage!";
+            feedback.enemyFeedback = HorsemanHeavy + " " + horsemenName + " cast " + heavyAtkParticles.name + " for " + dmg.ToString() + " damage!";
+            feedback.StopCoroutine(feedback.PlayParticles(heavyAtkParticles));
+            
         }
         else if (attack.Equals("NORMAL"))
         {
