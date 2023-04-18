@@ -42,6 +42,7 @@ public class CardScript : MonoBehaviour
         HB.dmg(cardso.damage);
         feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and attacked for " + cardso.damage.ToString() + " damage!";
         feedback.charChoices.SetActive(false);
+        feedback.nextBut.SetActive(true);
         HB.playerTurnOver = true;
     }
 
@@ -52,6 +53,7 @@ public class CardScript : MonoBehaviour
         P.heal(cardso.heal);
         feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and healed for " + cardso.heal.ToString() + " health!";
         feedback.charChoices.SetActive(false);
+        feedback.nextBut.SetActive(true);
         HB.playerTurnOver = true;
     }
 

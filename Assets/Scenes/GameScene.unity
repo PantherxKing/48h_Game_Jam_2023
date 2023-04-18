@@ -1278,7 +1278,7 @@ MonoBehaviour:
   enemyFeedback: 
   txt_on: 0
   hb: {fileID: 0}
-  nextBut: {fileID: 1056742556}
+  nextBut: {fileID: 1056742554}
 --- !u!4 &1666646421
 Transform:
   m_ObjectHideFlags: 0
@@ -1394,7 +1394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: 58}
+  m_AnchoredPosition: {x: 32, y: 58}
   m_SizeDelta: {x: 544.2346, y: 62.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886280428

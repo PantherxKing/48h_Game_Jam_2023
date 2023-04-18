@@ -14,11 +14,12 @@ public class PlayerFeedback : MonoBehaviour
     public bool txt_on = false;
     bool enemyActiveText = false;
     public HorsemenBase hb;
-    public Button nextBut;
+    public GameObject nextBut;
 
     void Awake()
     {
         charChoices.SetActive(true);
+        nextBut.SetActive(false);
     }
     private void Start()
     {
@@ -36,6 +37,7 @@ public class PlayerFeedback : MonoBehaviour
         {
             actionTxt.text = "";
             StartCoroutine(WaitForFeedback());
+            nextBut.SetActive(false);
             charChoices.SetActive(true);
             enemyActiveText = false;
         }
