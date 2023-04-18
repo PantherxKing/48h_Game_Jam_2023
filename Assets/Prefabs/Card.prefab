@@ -193,8 +193,9 @@ MonoBehaviour:
   Card: {fileID: 1735663227418261180}
   Icon: {fileID: 1735663226932438340}
   HorseMan: {fileID: 0}
+  player: {fileID: 0}
   CS: {fileID: 11400000, guid: f198f15991c55c64fb235ca253a9af58, type: 2}
-  HB: {fileID: 0}
+  feedback: {fileID: 0}
 --- !u!1 &1735663226826638261
 GameObject:
   m_ObjectHideFlags: 0

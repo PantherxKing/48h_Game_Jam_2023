@@ -7,34 +7,53 @@ public class PlayerFeedback : MonoBehaviour
 {
 
     public TMP_Text actionTxt;
-    public LayoutGroup charChoices;
+    public GameObject charChoices;
     public bool flashOver = true;
+    public string playerFeedback;
+    public string enemyFeedback;
+    public bool txt_on = false;
+    bool enemyActiveText = false;
+    public HorsemenBase hb;
+    public Button nextBut;
 
-    void Start()
+    void Awake()
     {
-        actionTxt.gameObject.SetActive(false);
-        charChoices.gameObject.SetActive(true);
-        actionTxt = actionTxt.GetComponent<TMP_Text>();
+        charChoices.SetActive(true);
+    }
+    private void Start()
+    {
+        hb = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
     }
 
-    public void WriteToScreen(string txt) 
+    public void OnNextButtonBressed()
     {
-        charChoices.gameObject.SetActive(false);
-        actionTxt.gameObject.SetActive(true);
+        if (actionTxt.text.Equals(playerFeedback))
+        {
+            WriteToScreen(enemyFeedback);
+            enemyActiveText = true;
+        }
+        else if (enemyActiveText)
+        {
+            actionTxt.text = "";
+            StartCoroutine(WaitForFeedback());
+            charChoices.SetActive(true);
+            enemyActiveText = false;
+        }
+    }
+
+    public void WriteToScreen(string txt)
+    {
+        charChoices.SetActive(false);
         actionTxt.text = txt;
         StartCoroutine(WaitForFeedback());
-        StopCoroutine(WaitForFeedback());
-
     }
 
-    IEnumerator WaitForFeedback() 
+    IEnumerator WaitForFeedback()
     {
         yield return new WaitForSeconds(2);
-        actionTxt.gameObject.SetActive(false);
-        charChoices.gameObject.SetActive(true);
     }
 
-    public IEnumerator FlashRed(Image im) 
+    public IEnumerator FlashRed(Image im)
     {
         flashOver = false;
         im.color = Color.red;
