@@ -48,4 +48,11 @@ public class CardScript : MonoBehaviour
         P.heal(cardso.heal);
         HB.playerTurnOver = true;
     }
+
+    public void Doge()
+    {
+        HB = HorseMan.GetComponent<HorsemenBase>();
+        HB.playerDodge = true;
+        HB.playerTurnOver = true;
+    }
 }
