@@ -11,6 +11,8 @@ public class HorsemenBase : Player
     [Header("Controls")]
     public bool playerTurnOver = false;
     public bool playerDodge = false;
+    public bool firstTurn = true;
+    public bool isDead = false;
     private System.Random rd = new System.Random();
     [Header("GameObjects")]
     [SerializeField]
@@ -39,6 +41,15 @@ public class HorsemenBase : Player
         feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
         transform.SetParent(GameObject.Find("GameFight").transform);
+
+        if (HM.numKilled < 1)
+        {
+            feedback.enemyFeedback = horsemenName + " has entered the fight!";
+        }
+        else
+        {
+            feedback.enemyFeedback = HM.horsemen[HM.numKilled - 1].GetComponent<HorsemenBase>().horsemenName + " has DIED! " + horsemenName + " has entered the fight!";
+        }
     }
     private int HitChance()
     {
@@ -104,23 +115,31 @@ public class HorsemenBase : Player
         }
         Target.dmg(dmg);
         StartCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));
-        
+
     }
 
     private void Update()
     {
-        if (playerTurnOver)
+        if (firstTurn)
+        {
+            feedback.WriteToScreen(feedback.enemyFeedback);
+            feedback.enemyActiveText = true;
+            firstTurn = false;
+        }
+        else if (playerTurnOver && !firstTurn)
         {
             feedback.WriteToScreen(feedback.playerFeedback);
-            Attack();
+            //Attack();
         }
+
+
         if (feedback.flashOver)
         {
             StopCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));
         }
         playerTurnOver = false;
 
-        if (Health <= 0)
+        if (Health <= 0 || isDead)
         {
             HM.horseDead = true;
             Destroy(gameObject);

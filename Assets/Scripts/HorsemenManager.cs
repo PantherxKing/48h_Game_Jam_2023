@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 public class HorsemenManager : MonoBehaviour
 {
     // Take a list of horsemen, spawn one by one on previous's death until none are left, then change to win screen
-    public GameObject horsemen;
+    public GameObject[] horsemen;
     public bool horseDead = false;
-    int numKilled = 0;
+    public int numKilled = 0;
+    PlayerFeedback feedback;
 
     private void Awake()
     {
-        Instantiate(horsemen, transform.position, Quaternion.identity);
+        feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
+        Instantiate(horsemen[0], transform.position, Quaternion.identity);
     }
     private void Update()
     {
@@ -21,9 +23,8 @@ public class HorsemenManager : MonoBehaviour
         }
         if (horseDead && numKilled < 3)
         {
-            print("test");
-            Instantiate(horsemen, transform);
             numKilled += 1;
+            Instantiate(horsemen[numKilled], transform);
             horseDead = false;
         }
         else if ((horseDead && numKilled >= 3))
@@ -36,6 +37,6 @@ public class HorsemenManager : MonoBehaviour
 
     private bool CheckHealth()
     {
-        return horsemen.gameObject == null || horsemen.GetComponent<HorsemenBase>().Health <= 0;
+        return horsemen[numKilled].gameObject == null || horsemen[numKilled].GetComponent<HorsemenBase>().Health <= 0;
     }
 }

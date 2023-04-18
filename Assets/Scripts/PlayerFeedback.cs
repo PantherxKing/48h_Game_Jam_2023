@@ -12,7 +12,7 @@ public class PlayerFeedback : MonoBehaviour
     public string playerFeedback;
     public string enemyFeedback;
     public bool txt_on = false;
-    bool enemyActiveText = false;
+    public bool enemyActiveText = false;
     public HorsemenBase hb;
     public GameObject nextBut;
 
@@ -21,7 +21,7 @@ public class PlayerFeedback : MonoBehaviour
         charChoices.SetActive(true);
         nextBut.SetActive(false);
     }
-    private void Start()
+    void Update()
     {
         hb = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
     }
@@ -30,21 +30,27 @@ public class PlayerFeedback : MonoBehaviour
     {
         if (actionTxt.text.Equals(playerFeedback))
         {
+            if (hb.Health > 0)
+            { 
+                hb.Attack(); 
+            }
             WriteToScreen(enemyFeedback);
             enemyActiveText = true;
         }
-        else if (enemyActiveText)
+        else if (actionTxt.text.Equals(enemyFeedback) || enemyActiveText)
         {
             actionTxt.text = "";
             StartCoroutine(WaitForFeedback());
             nextBut.SetActive(false);
             charChoices.SetActive(true);
             enemyActiveText = false;
+            StopAllCoroutines();
         }
     }
 
     public void WriteToScreen(string txt)
     {
+        nextBut.SetActive(true);
         charChoices.SetActive(false);
         actionTxt.text = txt;
         StartCoroutine(WaitForFeedback());
