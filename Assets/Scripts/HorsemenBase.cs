@@ -48,7 +48,7 @@ public class HorsemenBase : Player
         Target = GameObject.Find("Player").GetComponent<Player>();
         feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
-        transform.SetParent(GameObject.Find("GameFight").transform);
+        transform.SetParent(GameObject.Find("GameFight Canvas").transform);
         transform.localScale = new Vector3(imageScale, imageScale, imageScale);
         nameDisplay.text = horsemenName;
         if (HM.numKilled < 1)
