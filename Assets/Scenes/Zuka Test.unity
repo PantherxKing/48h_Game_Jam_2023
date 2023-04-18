@@ -648,6 +648,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1886280427}
     m_Modifications:
     - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: CS
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a912592060f28340ad021940aa3327f, type: 2}
+    - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: HB
       value: 
       objectReference: {fileID: 0}
@@ -677,7 +681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370053, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370053, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_AnchorMin.x
@@ -685,7 +689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370053, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370053, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_SizeDelta.x
@@ -737,11 +741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370053, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 491.6667
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370053, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370053, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -761,7 +765,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370058, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735663227418261181, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735663227418261181, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Doge
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735663227418261181, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735663227418261181, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

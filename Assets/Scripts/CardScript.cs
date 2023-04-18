@@ -31,7 +31,7 @@ public class CardScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HorseMan = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     public void Attack(CardSO cardso)
@@ -43,8 +43,16 @@ public class CardScript : MonoBehaviour
 
     public void Heal(CardSO cardso)
     {
+        HB = HorseMan.GetComponent<HorsemenBase>();
         P = player.GetComponent<Player>();
         P.heal(cardso.heal);
+        HB.playerTurnOver = true;
+    }
+
+    public void Doge()
+    {
+        HB = HorseMan.GetComponent<HorsemenBase>();
+        HB.playerDodge = true;
         HB.playerTurnOver = true;
     }
 }
