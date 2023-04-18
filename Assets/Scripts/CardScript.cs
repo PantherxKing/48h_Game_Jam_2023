@@ -17,6 +17,7 @@ public class CardScript : MonoBehaviour
     public CardSO CS;
     HorsemenBase HB;
     Player P;
+    public PlayerFeedback feedback;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class CardScript : MonoBehaviour
         Description.text = CS.cardDescription;
         Card.sprite = CS.cardBorder;
         Icon.sprite = CS.cardIcon;
+        feedback = feedback.GetComponent<PlayerFeedback>();
 
     }
 
@@ -38,6 +40,8 @@ public class CardScript : MonoBehaviour
     {
         HB = HorseMan.GetComponent<HorsemenBase>();
         HB.dmg(cardso.damage);
+        feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and attacked for " + cardso.damage.ToString() + " damage!";
+        feedback.charChoices.SetActive(false);
         HB.playerTurnOver = true;
     }
 
@@ -46,6 +50,8 @@ public class CardScript : MonoBehaviour
         HB = HorseMan.GetComponent<HorsemenBase>();
         P = player.GetComponent<Player>();
         P.heal(cardso.heal);
+        feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and healed for " + cardso.heal.ToString() + " health!";
+        feedback.charChoices.SetActive(false);
         HB.playerTurnOver = true;
     }
 

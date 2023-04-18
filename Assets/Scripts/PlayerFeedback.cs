@@ -7,19 +7,53 @@ public class PlayerFeedback : MonoBehaviour
 {
 
     public TMP_Text actionTxt;
+    public GameObject charChoices;
     public bool flashOver = true;
+    public string playerFeedback;
+    public string enemyFeedback;
+    public bool txt_on = false;
+    bool enemyActiveText = false;
+    public HorsemenBase hb;
+    public Button nextBut;
 
-    void Start()
+    void Awake()
     {
-        actionTxt = actionTxt.GetComponent<TMP_Text>();
+        charChoices.SetActive(true);
+    }
+    private void Start()
+    {
+        hb = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
     }
 
-    public void WriteToScreen(string txt) 
+    public void OnNextButtonBressed()
     {
+        if (actionTxt.text.Equals(playerFeedback))
+        {
+            WriteToScreen(enemyFeedback);
+            enemyActiveText = true;
+        }
+        else if (enemyActiveText)
+        {
+            actionTxt.text = "";
+            StartCoroutine(WaitForFeedback());
+            charChoices.SetActive(true);
+            enemyActiveText = false;
+        }
+    }
+
+    public void WriteToScreen(string txt)
+    {
+        charChoices.SetActive(false);
         actionTxt.text = txt;
+        StartCoroutine(WaitForFeedback());
     }
 
-    public IEnumerator FlashRed(Image im) 
+    IEnumerator WaitForFeedback()
+    {
+        yield return new WaitForSeconds(2);
+    }
+
+    public IEnumerator FlashRed(Image im)
     {
         flashOver = false;
         im.color = Color.red;

@@ -26,11 +26,11 @@ public class HorsemenBase : Player
     public String HorsemanNormal;
     public String HorsemanWeak;
     public String HorsemanMiss;
-    [Header("Shake Shake")]
-    public float Magnitude;
-    public float Roughness;
-    public float FadeIn;
-    public float FadeOut;
+    //[Header("Shake Shake")]
+    //public float Magnitude;
+    //public float Roughness;
+    //public float FadeIn;
+    //public float FadeOut;
 
     private void Start()
     {
@@ -42,7 +42,6 @@ public class HorsemenBase : Player
     private int HitChance()
     {
         int _attackHitChance = rd.Next(0, 100);
-        CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
         if (playerDodge)
         {
             _attackHitChance -= rd.Next(1, 50);
@@ -84,23 +83,23 @@ public class HorsemenBase : Player
 
         if (attack.Equals("MISS")) 
         {
-            feedback.WriteToScreen(horsemenName + HorsemanMiss);
+            feedback.enemyFeedback = horsemenName + HorsemanMiss;
             return;
         }
         else if (attack.Equals("HEAVY"))
         {
             dmg = rd.Next(15, 20); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
-            feedback.WriteToScreen(horsemenName + " " + HorsemanHeavy + " for " + dmg.ToString() + " damage!");
+            feedback.enemyFeedback = horsemenName + " " + HorsemanHeavy + " for " + dmg.ToString() + " damage!";
         }
         else if (attack.Equals("NORMAL"))
         {
             dmg = rd.Next(8, 15); // DMG = 8 - 15% player health (nums decided on how big health bar will be)
-            feedback.WriteToScreen(horsemenName + " " + HorsemanNormal + " for " + dmg.ToString() + " damage!");
+            feedback.enemyFeedback = horsemenName + " " + HorsemanNormal + " for " + dmg.ToString() + " damage!";
         }
         else if (attack.Equals("WEAK"))
         {
             dmg = rd.Next(3, 8); // DMG = 3 - 8% player health (nums decided on how big health bar will be)
-            feedback.WriteToScreen(horsemenName + " " + HorsemanWeak + " for " + dmg.ToString() + " damage!");
+            feedback.enemyFeedback = horsemenName + " " + HorsemanWeak + " for " + dmg.ToString() + " damage!";
         }
         Target.dmg(dmg);
         StartCoroutine(feedback.FlashRed(Target.gameObject.GetComponent<Image>()));     
@@ -110,6 +109,7 @@ public class HorsemenBase : Player
     {
         if (playerTurnOver)
         {
+            feedback.WriteToScreen(feedback.playerFeedback);
             Attack();
         }
         if (feedback.flashOver) 
