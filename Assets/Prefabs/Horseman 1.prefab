@@ -5334,7 +5334,7 @@ MonoBehaviour:
   HM: {fileID: 0}
   nameDisplay: {fileID: 4503348347699176117}
   horsemenName: Conquest
-  horsemenEnterMsg: has entered the fight!
+  horsemenEnterMsg: ' has entered the fight!'
   HorsemanDeathMsg: has DIED!
   HorsemanHeavy: cast HEAVENLY PURGE
   HorsemanNormal: did a RUSHING ATTACK

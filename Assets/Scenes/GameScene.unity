@@ -1116,6 +1116,7 @@ GameObject:
   - component: {fileID: 1666646421}
   - component: {fileID: 1666646420}
   - component: {fileID: 1666646422}
+  - component: {fileID: 1666646423}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -1172,12 +1173,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horsemen:
-  - {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
+  - {fileID: 7809794928073404164, guid: d33d5e5576c63ba4ab0a3b3fc69aa350, type: 3}
   - {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
   - {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
   - {fileID: 5314035200208382482, guid: 1dd6ce386f749994eafa7c574d8601b4, type: 3}
   horseDead: 0
   numKilled: 0
+--- !u!114 &1666646423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666646419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80a0afb06be34849b924d7402743d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 136346705}
+  M1: {fileID: 21300000, guid: 9c2cc1595e2ea1d4e9e57ae71baf7b21, type: 3}
+  M2: {fileID: 21300000, guid: 63927e72e42442c4785a9f737e02d1e7, type: 3}
+  M3: {fileID: 21300000, guid: c2d45d2786754e041b18130a9d0ba736, type: 3}
 --- !u!1 &1734428683
 GameObject:
   m_ObjectHideFlags: 0
