@@ -35,6 +35,8 @@ public class HorsemenBase : Player
     public String HorsemanNormal;
     public String HorsemanWeak;
     public String HorsemanMiss;
+    [Header("Attack Particles")]
+    public ParticleSystem heavyAtkParticles;
     [Header("Shake Shake")]
     public float Magnitude;
     public float Roughness;
@@ -109,6 +111,7 @@ public class HorsemenBase : Player
         else if (attack.Equals("HEAVY"))
         {
             dmg = rd.Next(15, 20); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
+            feedback.StartCoroutine(feedback.PlayParticles(heavyAtkParticles));
             feedback.enemyFeedback = horsemenName + " " + HorsemanHeavy + " for " + dmg.ToString() + " damage!";
         }
         else if (attack.Equals("NORMAL"))
