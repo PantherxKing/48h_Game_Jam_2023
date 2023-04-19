@@ -9,13 +9,8 @@ public class Player : MonoBehaviour
     public int Health;
     public int MaxHealth;
     public Slider healthSlider;
-<<<<<<< HEAD
-<<<<<<< HEAD
     public TMP_Text healthNum;
-=======
->>>>>>> parent of 6b7ccc8 (merge)
-=======
->>>>>>> parent of 6b7ccc8 (merge)
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,16 +21,10 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-<<<<<<< HEAD
-<<<<<<< HEAD
     public void Update()
     {
         healthNum.text = Health.ToString() + "/" + MaxHealth.ToString();
     }
-=======
->>>>>>> parent of 6b7ccc8 (merge)
-=======
->>>>>>> parent of 6b7ccc8 (merge)
 
     public void dmg(int dmg)
     {
