@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d9961a9c49d3a14cab523639e02f5fe, type: 3}
-  m_Name: Attack
+  m_Name: AttackTest
   m_EditorClassIdentifier: 
-  cardName: g
-  cardDescription: 
+  cardName: En Guard
+  cardDescription: Bring out your trusty sword and fight!
   cardBorder: {fileID: 21300000, guid: 772f0539255897e47a5dde7a3f685a3b, type: 3}
-  cardIcon: {fileID: 21300000, guid: 7639565d76d9e5a4da591362c751fd18, type: 3}
+  cardIcon: {fileID: 21300000, guid: 9c2cc1595e2ea1d4e9e57ae71baf7b21, type: 3}
   damage: 10
   maxDamage: 20
   heal: 0

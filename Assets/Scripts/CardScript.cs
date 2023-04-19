@@ -13,8 +13,6 @@ public class CardScript : MonoBehaviour
     public Image Icon;
     public GameObject HorseMan;
     public GameObject player;
-    public Animator myAni;
-    //public Animator horseAnim;
     [Header("Scrptable Object")]
     public CardSO CS;
     HorsemenBase HB;
@@ -41,8 +39,6 @@ public class CardScript : MonoBehaviour
     public void Attack(CardSO cardso)
     {
         int dmghit = (Random.Range(cardso.damage, cardso.maxDamage));
-        myAni = player.GetComponent<Animator>();
-        myAni.Play("Attack Hop");
         HB = HorseMan.GetComponent<HorsemenBase>();
         HB.dmg(dmghit);
         feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and attacked for " + dmghit.ToString() + " damage!";
