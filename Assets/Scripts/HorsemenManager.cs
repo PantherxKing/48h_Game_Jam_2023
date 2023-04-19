@@ -26,8 +26,8 @@ public class HorsemenManager : MonoBehaviour
         {
             numKilled += 1;
             Instantiate(horsemen[numKilled], transform);
-            horse = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
-            horse.animator.Play("Horsemen Spawn");
+            //horse = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
+            //horse.animator.Play("Horsemen Spawn");
             horseDead = false;
         }
         else if ((horseDead && numKilled >= 3))
