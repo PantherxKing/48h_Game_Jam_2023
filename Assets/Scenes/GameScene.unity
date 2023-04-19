@@ -572,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: CS
       value: 
-      objectReference: {fileID: 11400000, guid: b0ab75cf8464dd34aaa19475fb06996b, type: 2}
+      objectReference: {fileID: 11400000, guid: 62e021e037cf4fe49b032484631cbd1c, type: 2}
     - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: HB
       value: 
@@ -728,11 +728,11 @@ PrefabInstance:
     - target: {fileID: 1735663227418261181, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: b0ab75cf8464dd34aaa19475fb06996b, type: 2}
+      objectReference: {fileID: 11400000, guid: 62e021e037cf4fe49b032484631cbd1c, type: 2}
     - target: {fileID: 1735663227418261181, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: b0ab75cf8464dd34aaa19475fb06996b, type: 2}
+      objectReference: {fileID: 11400000, guid: 62e021e037cf4fe49b032484631cbd1c, type: 2}
     - target: {fileID: 1735663227418261181, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: CardSO, Assembly-CSharp
@@ -2508,6 +2508,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1886280427}
     m_Modifications:
     - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: CS
+      value: 
+      objectReference: {fileID: 11400000, guid: 1adcfe1550d421f43b2a06a39ea930ef, type: 2}
+    - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1377149139}
@@ -2603,6 +2607,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
+    - target: {fileID: 1735663227418261181, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 1adcfe1550d421f43b2a06a39ea930ef, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
