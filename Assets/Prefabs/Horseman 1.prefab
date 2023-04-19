@@ -4897,7 +4897,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   HM: {fileID: 0}
   nameDisplay: {fileID: 4503348347699176117}
-  horsemenName: Conquest
+  horsemenName: CONQUEST
   horsemenEnterMsg: ' rode in like thunder.'
   HorsemanDeathMsg: has perished!
   HorsemanHeavy: Begone lowly being!

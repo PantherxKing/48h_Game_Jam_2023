@@ -68,9 +68,10 @@ public class CardScript : MonoBehaviour
         HB.playerTurnOver = true;
     }
 
-    public void Doge()
+    public void Doge(CardSO cardso)
     {
         HB = HorseMan.GetComponent<HorsemenBase>();
+        feedback.playerFeedback = "You prepare a " +  cardso.cardName + " to mitigate the damage of the next attack!";
         audioSource.PlayOneShot(doge);
         HB.playerDodge = true;
         HB.playerTurnOver = true;

@@ -83,7 +83,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   HM: {fileID: 0}
   nameDisplay: {fileID: 1867013470604102233}
-  horsemenName: War
+  horsemenName: WAR
   horsemenEnterMsg: ' entered the fight, covered in blood.'
   HorsemanDeathMsg: has DIED!
   HorsemanHeavy: A frail fighter you are, I will not be bested!

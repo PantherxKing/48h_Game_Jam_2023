@@ -120,7 +120,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   HM: {fileID: 0}
   nameDisplay: {fileID: 7962814619303283592}
-  horsemenName: Famine
+  horsemenName: FAMINE
   horsemenEnterMsg: ' rode in, with scale n tow.'
   HorsemanDeathMsg: has DIED!
   HorsemanHeavy: Let hunger leave your belly lonely!

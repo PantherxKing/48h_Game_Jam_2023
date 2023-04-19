@@ -4955,7 +4955,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   HM: {fileID: 0}
   nameDisplay: {fileID: 4712606068897954461}
-  horsemenName: Death
+  horsemenName: DEATH
   horsemenEnterMsg: ' strode in followed by Hades.'
   HorsemanDeathMsg: has DIED!
   HorsemanHeavy: Be one with the afterlife!
