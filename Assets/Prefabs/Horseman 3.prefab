@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 5810578996816140830}
   - component: {fileID: 5810578996816140828}
   - component: {fileID: 5810578996816140829}
+  - component: {fileID: 4822682355791392489}
   m_Layer: 5
   m_Name: Horseman 3
   m_TagString: Enemy
@@ -108,6 +109,7 @@ MonoBehaviour:
   isDead: 0
   imageScale: 1
   healthTxt: {fileID: 5039216472716658595}
+  animator: {fileID: 0}
   Target: {fileID: 0}
   feedback: {fileID: 0}
   parent: {fileID: 0}
@@ -125,6 +127,26 @@ MonoBehaviour:
   Roughness: 4
   FadeIn: 1
   FadeOut: 1
+--- !u!95 &4822682355791392489
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810578996816140825}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 392299207b9482b4e8ab970227d716b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6812069735379840992
 GameObject:
   m_ObjectHideFlags: 0

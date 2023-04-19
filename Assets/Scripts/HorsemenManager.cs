@@ -6,6 +6,7 @@ public class HorsemenManager : MonoBehaviour
 {
     // Take a list of horsemen, spawn one by one on previous's death until none are left, then change to win screen
     public GameObject[] horsemen;
+    public HorsemenBase horse;
     public bool horseDead = false;
     public int numKilled = 0;
     PlayerFeedback feedback;
@@ -25,6 +26,8 @@ public class HorsemenManager : MonoBehaviour
         {
             numKilled += 1;
             Instantiate(horsemen[numKilled], transform);
+            horse = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HorsemenBase>();
+            horse.animator.Play("Horsemen Spawn");
             horseDead = false;
         }
         else if ((horseDead && numKilled >= 3))
