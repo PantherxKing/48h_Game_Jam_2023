@@ -127,7 +127,7 @@ public class HorsemenBase : Player
         {
             dmg = rd.Next(15, 20); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
             animator.Play("Horsemen Hop");
-            audioSource.PlayOneShot(hard, 0.7F);
+            audioSource.PlayOneShot(hard);
             //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.StartCoroutine(feedback.PlayParticles(heavyAtkParticles));
             feedback.enemyFeedback = HorsemanHeavy + " " + horsemenName + " cast " + heavyAtkParticles.name + " for " + dmg.ToString() + " damage!";
@@ -139,14 +139,14 @@ public class HorsemenBase : Player
             dmg = rd.Next(8, 15); // DMG = 8 - 15% player health (nums decided on how big health bar will be)
             //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             animator.Play("Horsemen Hop");
-            audioSource.PlayOneShot(normal, 0.7F);
+            audioSource.PlayOneShot(normal);
             feedback.enemyFeedback = horsemenName + " " + HorsemanNormal + " for " + dmg.ToString() + " damage!";
         }
         else if (attack.Equals("WEAK"))
         {
             dmg = rd.Next(3, 8); // DMG = 3 - 8% player health (nums decided on how big health bar will be)
             animator.Play("Horsemen Hop");
-            audioSource.PlayOneShot(weak, 0.7F);
+            audioSource.PlayOneShot(weak);
             //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.enemyFeedback = horsemenName + " " + HorsemanWeak + " for " + dmg.ToString() + " damage!";
         }

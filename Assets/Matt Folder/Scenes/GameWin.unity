@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: v i c t o r y
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
+  m_sharedMaterial: {fileID: -3713290523991159022, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -380,9 +380,17 @@ PrefabInstance:
       value: 27.1
       objectReference: {fileID: 0}
     - target: {fileID: 3392816445088146958, guid: a8d4aa95d76224947ad2f2b5a513bee8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
+    - target: {fileID: 3392816445088146958, guid: a8d4aa95d76224947ad2f2b5a513bee8, type: 3}
       propertyPath: m_fontSizeBase
       value: 27.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3392816445088146958, guid: a8d4aa95d76224947ad2f2b5a513bee8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3713290523991159022, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
     - target: {fileID: 3392816446113442292, guid: a8d4aa95d76224947ad2f2b5a513bee8, type: 3}
       propertyPath: m_Name
       value: Start game
@@ -541,9 +549,17 @@ PrefabInstance:
       value: 21.2
       objectReference: {fileID: 0}
     - target: {fileID: 6252530679307041312, guid: 68be7be5ae980b248bb99a14c49584dc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
+    - target: {fileID: 6252530679307041312, guid: 68be7be5ae980b248bb99a14c49584dc, type: 3}
       propertyPath: m_fontSizeBase
       value: 21.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6252530679307041312, guid: 68be7be5ae980b248bb99a14c49584dc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3713290523991159022, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
     - target: {fileID: 6252530680348548328, guid: 68be7be5ae980b248bb99a14c49584dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

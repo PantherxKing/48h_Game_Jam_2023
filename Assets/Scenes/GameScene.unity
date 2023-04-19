@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: NEXT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
+  m_sharedMaterial: {fileID: -3713290523991159022, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -287,14 +287,14 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7f14c6b71bd4244459fdfc94f020c6c3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -446,8 +446,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ed4babeefdff5594c8a6d530b76ed413, type: 2}
+  m_sharedMaterial: {fileID: -8623242375205943399, guid: ed4babeefdff5594c8a6d530b76ed413, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -705,6 +705,14 @@ PrefabInstance:
       propertyPath: HB
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: hit
+      value: 
+      objectReference: {fileID: 8300000, guid: 20dea8ff58c5d8c48b0c33a02878e6ff, type: 3}
+    - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: doge
+      value: 
+      objectReference: {fileID: 8300000, guid: e1f45218f02050c41b6822142e3f59f9, type: 3}
     - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: player
       value: 
@@ -1009,8 +1017,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ed4babeefdff5594c8a6d530b76ed413, type: 2}
+  m_sharedMaterial: {fileID: -8623242375205943399, guid: ed4babeefdff5594c8a6d530b76ed413, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1743,6 +1751,7 @@ GameObject:
   - component: {fileID: 1377149142}
   - component: {fileID: 1377149141}
   - component: {fileID: 1377149145}
+  - component: {fileID: 1377149146}
   m_Layer: 5
   m_Name: Musketeer
   m_TagString: Player
@@ -1857,6 +1866,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &1377149146
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377149139}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1503799541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,8 +2022,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: MENU
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
+  m_sharedMaterial: {fileID: -3713290523991159022, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2084,7 +2189,7 @@ MonoBehaviour:
   M1: {fileID: 21300000, guid: e339c659400c9cd4a933d2537df82bb3, type: 3}
   M2: {fileID: 21300000, guid: b163b2af11ca6c342b54ae31d1eaf896, type: 3}
   M3: {fileID: 21300000, guid: 8be8a2d35d696324daee8906f3db0628, type: 3}
-  M4: {fileID: 0}
+  M4: {fileID: 21300000, guid: 188b03615fe59684295b8df9a4eeb693, type: 3}
 --- !u!114 &1666646424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2330,6 +2435,14 @@ PrefabInstance:
       propertyPath: HB
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: hit
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: doge
+      value: 
+      objectReference: {fileID: 8300000, guid: e1f45218f02050c41b6822142e3f59f9, type: 3}
     - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: player
       value: 
@@ -2731,6 +2844,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: doge
+      value: 
+      objectReference: {fileID: 8300000, guid: 4befbb3c89a86b048a7dd3e08dc73a2a, type: 3}
+    - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1377149139}
@@ -2944,6 +3061,10 @@ PrefabInstance:
       propertyPath: CS
       value: 
       objectReference: {fileID: 11400000, guid: 1adcfe1550d421f43b2a06a39ea930ef, type: 2}
+    - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
+      propertyPath: hit
+      value: 
+      objectReference: {fileID: 8300000, guid: 20dea8ff58c5d8c48b0c33a02878e6ff, type: 3}
     - target: {fileID: 1735663226555370052, guid: 4dca681bf17d2f9478d2a17b724c0e76, type: 3}
       propertyPath: player
       value: 
