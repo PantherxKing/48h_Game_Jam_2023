@@ -19,6 +19,10 @@ public class HorsemenBase : Player
     private System.Random rd = new System.Random();
     public TextMeshProUGUI healthTxt;
     public Animator animator;
+    public AudioClip weak;
+    public AudioClip normal;
+    public AudioClip hard;
+    public AudioSource audioSource;
     [Header("GameObjects")]
     [SerializeField]
     Player Target;
@@ -53,7 +57,8 @@ public class HorsemenBase : Player
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
         transform.SetParent(GameObject.Find("Panel").transform);
         animator = GetComponent<Animator>();
-        
+        audioSource = GetComponent<AudioSource>();
+
         transform.localScale = new Vector3(imageScale, imageScale, imageScale);
         nameDisplay.text = horsemenName;
         if (HM.numKilled < 1)
@@ -122,6 +127,7 @@ public class HorsemenBase : Player
         {
             dmg = rd.Next(15, 20); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
             animator.Play("Horsemen Hop");
+            audioSource.PlayOneShot(hard, 0.7F);
             //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.StartCoroutine(feedback.PlayParticles(heavyAtkParticles));
             feedback.enemyFeedback = HorsemanHeavy + " " + horsemenName + " cast " + heavyAtkParticles.name + " for " + dmg.ToString() + " damage!";
@@ -133,12 +139,14 @@ public class HorsemenBase : Player
             dmg = rd.Next(8, 15); // DMG = 8 - 15% player health (nums decided on how big health bar will be)
             //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             animator.Play("Horsemen Hop");
+            audioSource.PlayOneShot(normal, 0.7F);
             feedback.enemyFeedback = horsemenName + " " + HorsemanNormal + " for " + dmg.ToString() + " damage!";
         }
         else if (attack.Equals("WEAK"))
         {
             dmg = rd.Next(3, 8); // DMG = 3 - 8% player health (nums decided on how big health bar will be)
             animator.Play("Horsemen Hop");
+            audioSource.PlayOneShot(weak, 0.7F);
             //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.enemyFeedback = horsemenName + " " + HorsemanWeak + " for " + dmg.ToString() + " damage!";
         }

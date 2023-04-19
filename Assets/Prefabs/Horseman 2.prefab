@@ -73,6 +73,10 @@ MonoBehaviour:
   imageScale: 1
   healthTxt: {fileID: 5286191333819657304}
   animator: {fileID: 0}
+  weak: {fileID: 8300000, guid: 044680926e1e6644eabfb61487c8d730, type: 3}
+  normal: {fileID: 8300000, guid: 3cb0073e8893c254f951e3bdb409707b, type: 3}
+  hard: {fileID: 8300000, guid: f6380f5e3b9a7f9459a9eb751584b56d, type: 3}
+  audioSource: {fileID: 0}
   Target: {fileID: 0}
   feedback: {fileID: 0}
   parent: {fileID: 0}

@@ -15,6 +15,8 @@ public class CardScript : MonoBehaviour
     public GameObject player;
     public Animator myAni;
     public AudioClip hit;
+    public AudioClip doge;
+    public AudioSource audioSource;
     //public Animator horseAnim;
     [Header("Scrptable Object")]
     public CardSO CS;
@@ -30,6 +32,7 @@ public class CardScript : MonoBehaviour
         Card.sprite = CS.cardBorder;
         Icon.sprite = CS.cardIcon;
         feedback = feedback.GetComponent<PlayerFeedback>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -44,6 +47,7 @@ public class CardScript : MonoBehaviour
         int dmghit = (Random.Range(cardso.damage, cardso.maxDamage));
         myAni = player.GetComponent<Animator>();
         myAni.Play("Attack Hop");
+        audioSource.PlayOneShot(hit, 0.7F);
         HB = HorseMan.GetComponent<HorsemenBase>();
         HB.dmg(dmghit);
         feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and attacked for " + dmghit.ToString() + " damage!";
@@ -56,6 +60,7 @@ public class CardScript : MonoBehaviour
     {
         HB = HorseMan.GetComponent<HorsemenBase>();
         P = player.GetComponent<Player>();
+        audioSource.PlayOneShot(doge, 0.7F);
         P.heal(cardso.heal);
         feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and healed for " + cardso.heal.ToString() + " health!";
         feedback.charChoices.SetActive(false);
@@ -66,6 +71,7 @@ public class CardScript : MonoBehaviour
     public void Doge()
     {
         HB = HorseMan.GetComponent<HorsemenBase>();
+        audioSource.PlayOneShot(doge, 0.7F);
         HB.playerDodge = true;
         HB.playerTurnOver = true;
     }
