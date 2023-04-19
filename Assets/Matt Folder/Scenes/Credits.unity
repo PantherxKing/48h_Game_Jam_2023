@@ -6619,7 +6619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cam - Designer
+  m_text: Kam - Designer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
   m_sharedMaterial: {fileID: -3713290523991159022, guid: 00d9edfe13e9dc04d8330e7efb867e4a, type: 2}
