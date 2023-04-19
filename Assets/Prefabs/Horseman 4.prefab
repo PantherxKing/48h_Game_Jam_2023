@@ -4959,9 +4959,9 @@ MonoBehaviour:
   horsemenEnterMsg: ' strode in followed by Hades.'
   HorsemanDeathMsg: has DIED!
   HorsemanHeavy: Be one with the afterlife!
-  HorsemanNormal: did a RUSHING ATTACK
-  HorsemanWeak: POKED the player
-  HorsemanMiss: ' Missed!'
+  HorsemanNormal: did a SWEEPING SLASH
+  HorsemanWeak: CLEAVED the musketeer
+  HorsemanMiss: ' missed!'
   heavyAtkParticles: {fileID: 4749225282436644850}
   Magnitude: 4
   Roughness: 4

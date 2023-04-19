@@ -88,8 +88,8 @@ MonoBehaviour:
   HorsemanDeathMsg: has DIED!
   HorsemanHeavy: A frail fighter you are, I will not be bested!
   HorsemanNormal: did a RUSHING ATTACK
-  HorsemanWeak: POKED the player
-  HorsemanMiss: ' Missed!'
+  HorsemanWeak: STABBED the musketeer
+  HorsemanMiss: ' missed!'
   heavyAtkParticles: {fileID: 3187217633314322371}
   Magnitude: 4
   Roughness: 4

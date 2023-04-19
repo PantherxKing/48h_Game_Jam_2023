@@ -4901,9 +4901,9 @@ MonoBehaviour:
   horsemenEnterMsg: ' rode in like thunder.'
   HorsemanDeathMsg: has perished!
   HorsemanHeavy: Begone lowly being!
-  HorsemanNormal: did a RUSHING ATTACK
-  HorsemanWeak: POKED the player
-  HorsemanMiss: ' Missed!'
+  HorsemanNormal: RAINED DOWN arrows
+  HorsemanWeak: shot an ARROW
+  HorsemanMiss: ' missed!'
   heavyAtkParticles: {fileID: 1811024009860954176}
   Magnitude: 4
   Roughness: 4
