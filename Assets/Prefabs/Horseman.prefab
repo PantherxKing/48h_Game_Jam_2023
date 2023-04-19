@@ -229,11 +229,18 @@ MonoBehaviour:
   Health: 100
   MaxHealth: 100
   healthSlider: {fileID: 5314035200745028551}
+  healthNum: {fileID: 0}
   playerTurnOver: 0
   playerDodge: 0
   firstTurn: 1
   isDead: 0
   imageScale: 0.2
+  healthTxt: {fileID: 0}
+  animator: {fileID: 0}
+  weak: {fileID: 0}
+  normal: {fileID: 0}
+  hard: {fileID: 0}
+  audioSource: {fileID: 0}
   Target: {fileID: 0}
   feedback: {fileID: 0}
   parent: {fileID: 0}
@@ -243,9 +250,10 @@ MonoBehaviour:
   horsemenEnterMsg: has entered the fight!
   HorsemanDeathMsg: has DIED!
   HorsemanHeavy: cast HEAVENLY PURGE
-  HorsemanNormal: did a RUSHING ATTACK
-  HorsemanWeak: POKED the player
+  HorsemanNormal: RAINED DOWN arrows
+  HorsemanWeak: shot an ARROW
   HorsemanMiss: ' Missed!'
+  heavyAtkParticles: {fileID: 0}
   Magnitude: 4
   Roughness: 4
   FadeIn: 1

@@ -124,9 +124,9 @@ MonoBehaviour:
   horsemenEnterMsg: ' rode in, with scale n tow.'
   HorsemanDeathMsg: has DIED!
   HorsemanHeavy: Let hunger leave your belly lonely!
-  HorsemanNormal: did a RUSHING ATTACK
-  HorsemanWeak: POKED the player
-  HorsemanMiss: ' Missed!'
+  HorsemanNormal: inflicted the musketeer with STOMACH PAIN
+  HorsemanWeak: cursed you with poor digestion!
+  HorsemanMiss: ' missed!'
   heavyAtkParticles: {fileID: 8108173169527151225}
   Magnitude: 4
   Roughness: 4
