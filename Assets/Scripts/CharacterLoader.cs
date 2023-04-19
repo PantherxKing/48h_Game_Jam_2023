@@ -9,7 +9,6 @@ public class CharacterLoader : MonoBehaviour
     public Sprite M1;
     public Sprite M2;
     public Sprite M3;
-    public Sprite M4;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +25,6 @@ public class CharacterLoader : MonoBehaviour
         if (selectedCharacter == 2)
         {
             Character.sprite = M3;
-        }
-        if (selectedCharacter == 3)
-        {
-            Character.sprite = M4;
         }
     }
 }
