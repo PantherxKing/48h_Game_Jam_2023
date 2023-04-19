@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: En Guard
   cardDescription: Bring out your trusty sword and fight!
   cardBorder: {fileID: 21300000, guid: 772f0539255897e47a5dde7a3f685a3b, type: 3}
-  cardIcon: {fileID: 21300000, guid: e1692c8fa4c4a214790d16d332cb4546, type: 3}
+  cardIcon: {fileID: 21300000, guid: abe4da297a7faa647bf95c8c04ac4a54, type: 3}
   damage: 10
   maxDamage: 20
   heal: 0
