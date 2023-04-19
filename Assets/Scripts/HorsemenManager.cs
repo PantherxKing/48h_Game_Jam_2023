@@ -31,7 +31,7 @@ public class HorsemenManager : MonoBehaviour
         {
             SceneManager.LoadScene("GameWin");
         }
-        
+
 
     }
 
