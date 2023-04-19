@@ -11,7 +11,7 @@ public class CardZoom : MonoBehaviour
         if (!zoomed)
         {
             originalPos = transform.position;
-            transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             transform.localScale = transform.localScale * 2;
             zoomed = true;
         }
