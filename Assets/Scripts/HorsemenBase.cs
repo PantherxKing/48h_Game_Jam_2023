@@ -16,6 +16,7 @@ public class HorsemenBase : Player
     public bool isDead = false;
     public float imageScale;
     private System.Random rd = new System.Random();
+    public TMP_Text healthText;
     [Header("GameObjects")]
     [SerializeField]
     Player Target;
@@ -62,6 +63,7 @@ public class HorsemenBase : Player
             feedback.enemyFeedback = previousHorseman.horsemenName + " " + previousHorseman.HorsemanDeathMsg + " " + horsemenName + " " + horsemenEnterMsg;
         }
     }
+
     private int HitChance()
     {
         int _attackHitChance = rd.Next(0, 100);
@@ -166,6 +168,7 @@ public class HorsemenBase : Player
             HM.horseDead = true;
             Destroy(gameObject);
         }
+        healthText.text = Health.ToString() + "/" + MaxHealth.ToString();
     }
 
 }
