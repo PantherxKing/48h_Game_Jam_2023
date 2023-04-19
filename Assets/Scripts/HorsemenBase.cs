@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class HorsemenBase : Player
 {
@@ -16,6 +17,8 @@ public class HorsemenBase : Player
     public bool isDead = false;
     public float imageScale;
     private System.Random rd = new System.Random();
+    public TextMeshProUGUI healthTxt;
+    public Animator animator;
     [Header("GameObjects")]
     [SerializeField]
     Player Target;
@@ -45,10 +48,12 @@ public class HorsemenBase : Player
 
     private void Start()
     {
-        Target = GameObject.Find("Player").GetComponent<Player>();
+        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
-        transform.SetParent(GameObject.Find("GameFight Canvas").transform);
+        transform.SetParent(GameObject.Find("Panel").transform);
+        animator = GetComponent<Animator>();
+        
         transform.localScale = new Vector3(imageScale, imageScale, imageScale);
         nameDisplay.text = horsemenName;
         if (HM.numKilled < 1)
@@ -64,6 +69,7 @@ public class HorsemenBase : Player
     private int HitChance()
     {
         int _attackHitChance = rd.Next(0, 100);
+        
         if (playerDodge)
         {
             _attackHitChance -= rd.Next(1, 50);
@@ -71,6 +77,10 @@ public class HorsemenBase : Player
             {
                 _attackHitChance = 0;
             }
+        }
+        if (Health <= 30)
+        {
+            _attackHitChance += (MaxHealth/2) - Health;
         }
         playerDodge = false;
         return _attackHitChance;
@@ -111,17 +121,25 @@ public class HorsemenBase : Player
         else if (attack.Equals("HEAVY"))
         {
             dmg = rd.Next(15, 20); // DMG = 15 - 20% player health (nums decided on how big health bar will be)
+            animator.Play("Horsemen Hop");
+            //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.StartCoroutine(feedback.PlayParticles(heavyAtkParticles));
-            feedback.enemyFeedback = horsemenName + " " + HorsemanHeavy + " for " + dmg.ToString() + " damage!";
+            feedback.enemyFeedback = HorsemanHeavy + " " + horsemenName + " cast " + heavyAtkParticles.name + " for " + dmg.ToString() + " damage!";
+            feedback.StopCoroutine(feedback.PlayParticles(heavyAtkParticles));
+            
         }
         else if (attack.Equals("NORMAL"))
         {
             dmg = rd.Next(8, 15); // DMG = 8 - 15% player health (nums decided on how big health bar will be)
+            //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
+            animator.Play("Horsemen Hop");
             feedback.enemyFeedback = horsemenName + " " + HorsemanNormal + " for " + dmg.ToString() + " damage!";
         }
         else if (attack.Equals("WEAK"))
         {
             dmg = rd.Next(3, 8); // DMG = 3 - 8% player health (nums decided on how big health bar will be)
+            animator.Play("Horsemen Hop");
+            //CameraShaker.Instance.ShakeOnce(Magnitude, Roughness, FadeIn, FadeOut);
             feedback.enemyFeedback = horsemenName + " " + HorsemanWeak + " for " + dmg.ToString() + " damage!";
         }
         Target.dmg(dmg);
@@ -155,6 +173,7 @@ public class HorsemenBase : Player
             HM.horseDead = true;
             Destroy(gameObject);
         }
+        healthTxt.text = Health.ToString() + "/" + MaxHealth.ToString();
     }
 
 }

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     public int Health;
     public int MaxHealth;
     public Slider healthSlider;
+    public TMP_Text healthNum;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,10 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
+    public void Update()
+    {
+        healthNum.text = Health.ToString() + "/" + MaxHealth.ToString();
+    }
 
     public void dmg(int dmg)
     {
