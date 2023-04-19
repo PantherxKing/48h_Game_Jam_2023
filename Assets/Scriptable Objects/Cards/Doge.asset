@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9961a9c49d3a14cab523639e02f5fe, type: 3}
   m_Name: Doge
   m_EditorClassIdentifier: 
-  cardName: parry
-  cardDescription: Where's perry?
+  cardName: Parry
+  cardDescription: Where's parry? In your shield of course! Miss attacks with style!
   cardBorder: {fileID: 21300000, guid: c46fea8350a2fde479dd433d4ad4ae84, type: 3}
   cardIcon: {fileID: 21300000, guid: 70ec71b3009393545acf8a0dec43ce99, type: 3}
   damage: 0
