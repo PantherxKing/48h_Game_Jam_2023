@@ -14,4 +14,9 @@ public class MenuSelect : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OnMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
