@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5535663858e30845b98c87131785a83, type: 3}
   m_Name: Muskatere4
   m_EditorClassIdentifier: 
-  Name: Muskatere4
+  Name: D'Artagnan
   IDNumber: 3
   Portrait: {fileID: 21300000, guid: 188b03615fe59684295b8df9a4eeb693, type: 3}
