@@ -5384,6 +5384,7 @@ RectTransform:
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &2280840062193192779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5744,5 +5745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of 6b7ccc8 (merge)
 =======
 >>>>>>> parent of 6b7ccc8 (merge)

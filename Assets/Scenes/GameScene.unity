@@ -769,6 +769,7 @@ CanvasRenderer:
   m_GameObject: {fileID: 422319416}
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &523801262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1066,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647715020}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of 6b7ccc8 (merge)
 =======
 >>>>>>> parent of 6b7ccc8 (merge)
 --- !u!1 &963276500
@@ -1413,6 +1416,7 @@ CanvasRenderer:
   m_GameObject: {fileID: 1257015427}
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1377149139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1524,8 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -57}
   m_SizeDelta: {x: 3839.9998, y: 2160}
   m_Pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> parent of 6b7ccc8 (merge)
 =======
 >>>>>>> parent of 6b7ccc8 (merge)
 --- !u!1 &1666646419
