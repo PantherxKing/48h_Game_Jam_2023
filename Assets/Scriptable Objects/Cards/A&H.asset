@@ -16,7 +16,7 @@ MonoBehaviour:
   cardDescription: With the power of the muskateers, use an attack that both heals
     and attacks!
   cardBorder: {fileID: 21300000, guid: a3a4988e2a47a9141838d346e115947f, type: 3}
-  cardIcon: {fileID: 21300000, guid: 6227e465295cf984fbd23dc95f2fc46f, type: 3}
+  cardIcon: {fileID: 21300000, guid: a7c5d750b0e89064e889cceec2a1720e, type: 3}
   damage: 5
   maxDamage: 10
   heal: 10
