@@ -40,6 +40,8 @@ public class CardScript : MonoBehaviour
     {
         HB = HorseMan.GetComponent<HorsemenBase>();
         HB.dmg(cardso.damage);
+        AudioManager.instance.swordSoundEffect();
+        AudioManager.instance.hitSoundEffect();
         feedback.playerFeedback = "You cast the ability: " + Name.text.ToString() + " and attacked for " + cardso.damage.ToString() + " damage!";
         feedback.charChoices.SetActive(false);
         feedback.nextBut.SetActive(true);
@@ -62,5 +64,6 @@ public class CardScript : MonoBehaviour
         HB = HorseMan.GetComponent<HorsemenBase>();
         HB.playerDodge = true;
         HB.playerTurnOver = true;
+        AudioManager.instance.dodgeSoundEffect();
     }
 }
