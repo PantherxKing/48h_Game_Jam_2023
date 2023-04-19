@@ -1480,6 +1480,7 @@ GameObject:
   - component: {fileID: 1377149140}
   - component: {fileID: 1377149142}
   - component: {fileID: 1377149141}
+  - component: {fileID: 1377149145}
   m_Layer: 5
   m_Name: Musketeer
   m_TagString: Player
@@ -1574,6 +1575,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -57}
   m_SizeDelta: {x: 3839.9998, y: 2160}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1377149145
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377149139}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a062822ab4f356a46be8f1206a034a81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1666646419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,6 +1667,7 @@ MonoBehaviour:
   - {fileID: 873157141788517240, guid: 2f935877c1259c241b70b2a786c9c1b9, type: 3}
   - {fileID: 5810578996816140825, guid: d1ae1a6782593944bb3c3412e2f61a9b, type: 3}
   - {fileID: 7047558909627368725, guid: b56f9b71073db2845941105295687c6a, type: 3}
+  horse: {fileID: 0}
   horseDead: 0
   numKilled: 0
 --- !u!114 &1666646423
