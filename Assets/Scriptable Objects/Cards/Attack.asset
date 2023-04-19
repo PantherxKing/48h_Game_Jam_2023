@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9961a9c49d3a14cab523639e02f5fe, type: 3}
   m_Name: Attack
   m_EditorClassIdentifier: 
-  cardName: g
-  cardDescription: 
+  cardName: En Guard
+  cardDescription: Bring out your trusty sword and fight!
   cardBorder: {fileID: 21300000, guid: 772f0539255897e47a5dde7a3f685a3b, type: 3}
   cardIcon: {fileID: 21300000, guid: 7639565d76d9e5a4da591362c751fd18, type: 3}
   damage: 10

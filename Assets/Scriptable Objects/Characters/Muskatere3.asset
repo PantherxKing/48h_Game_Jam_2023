@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Muskatere3
   IDNumber: 2
-  Portrait: {fileID: 21300000, guid: aa8fb86075df7034cbcbd6ce0bbcacd0, type: 3}
+  Portrait: {fileID: 21300000, guid: 8be8a2d35d696324daee8906f3db0628, type: 3}
