@@ -4878,12 +4878,13 @@ MonoBehaviour:
   Health: 100
   MaxHealth: 100
   healthSlider: {fileID: 7809794927536504529}
-  healthNum: {fileID: 7282543236647382071}
+  healthNum: {fileID: 0}
   playerTurnOver: 0
   playerDodge: 0
   firstTurn: 1
   isDead: 0
   imageScale: 1
+  healthText: {fileID: 7282543236647382071}
   Target: {fileID: 0}
   feedback: {fileID: 0}
   parent: {fileID: 0}
