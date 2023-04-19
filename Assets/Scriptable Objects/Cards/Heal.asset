@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9961a9c49d3a14cab523639e02f5fe, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
-  cardName: potion
-  cardDescription: Heal me
+  cardName: Potion
+  cardDescription: 'Stolen from hell, these will heal you from any damage! '
   cardBorder: {fileID: 21300000, guid: 1db2efd7987e6bd4ca8bb5bc74a13b29, type: 3}
   cardIcon: {fileID: 21300000, guid: 055adb6cfcfcba94fac9f5d285c368d0, type: 3}
   damage: 0
