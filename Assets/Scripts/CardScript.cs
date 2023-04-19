@@ -14,6 +14,7 @@ public class CardScript : MonoBehaviour
     public GameObject HorseMan;
     public GameObject player;
     public Animator myAni;
+    public AudioClip hit;
     //public Animator horseAnim;
     [Header("Scrptable Object")]
     public CardSO CS;
