@@ -16,6 +16,7 @@ public class HorsemenBase : Player
     public bool isDead = false;
     public float imageScale;
     private System.Random rd = new System.Random();
+    public TextMeshProUGUI healthTxt;
     [Header("GameObjects")]
     [SerializeField]
     Player Target;
@@ -166,6 +167,7 @@ public class HorsemenBase : Player
             HM.horseDead = true;
             Destroy(gameObject);
         }
+        healthTxt.text = Health.ToString() + "/" + MaxHealth.ToString();
     }
 
 }
