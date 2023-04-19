@@ -46,6 +46,7 @@ public class HorsemenBase : Player
 
     private void Start()
     {
+        AudioManager.instance.horseSoundEffect();
         Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();

@@ -16,9 +16,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] List<AudioClip> dodgeSound = new List<AudioClip>();
     [Range(0.0f, 1.0f)]
     public float dodgeVolume;
-    [SerializeField] List<AudioClip> swordHitSound = new List<AudioClip>();
+    [SerializeField] AudioClip swordHitSound;
     [Range(0.0f, 1.0f)]
     public float swordVolume;
+    [SerializeField] AudioClip horseSound;
+    [Range(0.0f, 1.0f)]
+    public float horseVolume;
     private void Awake()
     {
         if (instance == null)
@@ -44,12 +47,9 @@ public class AudioManager : MonoBehaviour
 
     public void swordSoundEffect()
     {
-        AudioClip clip = swordHitSound[UnityEngine.Random.Range(0, hitImpactSound.Count - 1)];
-        source.volume = thisVolume * hitVolume;
-        if (Time.timeScale != 0)
-        {
-            source.PlayOneShot(clip);
-        }
+        source.clip = swordHitSound;
+        source.volume = thisVolume * swordVolume;
+        source.Play();
     }
 
     public void dodgeSoundEffect()
@@ -62,6 +62,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void horseSoundEffect()
+    {
+        source.clip = horseSound;
+        source.volume = thisVolume * horseVolume;
+        source.Play();
+    }
 
 }
 
