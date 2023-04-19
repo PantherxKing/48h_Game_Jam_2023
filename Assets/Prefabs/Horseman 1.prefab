@@ -4882,7 +4882,7 @@ MonoBehaviour:
   playerDodge: 0
   firstTurn: 1
   isDead: 0
-  imageScale: 0.2
+  imageScale: 1
   Target: {fileID: 0}
   feedback: {fileID: 0}
   parent: {fileID: 0}

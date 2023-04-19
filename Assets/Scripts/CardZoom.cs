@@ -25,4 +25,19 @@ public class CardZoom : MonoBehaviour
             zoomed = false;
         }
     }
+
+    IEnumerator AutoZoomOut() 
+    {
+        yield return new WaitForSeconds(3);
+        OnMouseExit();
+    }
+    private void Update()
+    {
+        StartCoroutine(AutoZoomOut());
+        if (!zoomed)
+        {
+            StopAllCoroutines();
+        }
+
+    }
 }
