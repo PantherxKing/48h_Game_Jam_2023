@@ -48,7 +48,8 @@ public class HorsemenBase : Player
         Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         feedback = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerFeedback>();
         HM = GameObject.FindGameObjectWithTag("GameController").GetComponent<HorsemenManager>();
-        transform.SetParent(GameObject.Find("GameFight").transform);
+        transform.SetParent(GameObject.Find("Panel").transform);
+        
         transform.localScale = new Vector3(imageScale, imageScale, imageScale);
         nameDisplay.text = horsemenName;
         if (HM.numKilled < 1)
@@ -64,6 +65,7 @@ public class HorsemenBase : Player
     private int HitChance()
     {
         int _attackHitChance = rd.Next(0, 100);
+        
         if (playerDodge)
         {
             _attackHitChance -= rd.Next(1, 50);
@@ -71,6 +73,10 @@ public class HorsemenBase : Player
             {
                 _attackHitChance = 0;
             }
+        }
+        if (Health <= 30)
+        {
+            _attackHitChance += (MaxHealth/2) - Health;
         }
         playerDodge = false;
         return _attackHitChance;
